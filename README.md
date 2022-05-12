@@ -1,3 +1,5 @@
+<img align="right" width="200" src="media/lie-sphere.png">
+
 LibLie
 ======
 **LibLie** is a small lib containing utils functions for matrix operations on the special orthogonal group SO(3), the special euclidian group SE(3) and their respective lie algebras.
@@ -8,5 +10,5 @@ This project is under active development. If a functionality is missing, please 
 Documentation
 -------------
 
-A documentation is avaible [here](https://htmlpreview.github.io/?https://github.com/norlab-ulaval/Liblie/blob/main/docs/build/html/index.html).
+A documentation is available [here](https://htmlpreview.github.io/?https://github.com/norlab-ulaval/Liblie/blob/main/docs/build/html/index.html).
 You can also directly check it in the `docs` directory of this repo.

@@ -10,3 +10,5 @@ Documentation
 
 A documentation is avaible [here](https://htmlpreview.github.io/?https://github.com/norlab-ulaval/Liblie/blob/main/docs/build/html/index.html).
 You can also directly check it in the `docs` directory of this repo.
+
+<img src="readme_fig.jpg" alt="drawing" width="250"/>

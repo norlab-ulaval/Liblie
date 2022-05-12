@@ -5,4 +5,8 @@ The notations are based on the book "State estimation for robotics" by Tim Barfo
 
 This project is under active development. If a functionality is missing, please open an issue and I'll add the function!
 
-Please refer to the [documentation](docs/build/html/index.html).
+Documentation
+-------------
+
+A documentation is avaible [here](https://htmlpreview.github.io/?https://github.com/norlab-ulaval/Liblie/blob/main/docs/build/html/index.html).
+You can also directly check it in the `docs` directory of this repo.

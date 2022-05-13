@@ -17,6 +17,13 @@ Installation
 
 To use this lib, simply clone this project and import the file ``liblie.py`` to your python project.
 
+Run unit tests
+----
+To run the unit tests, simply execute the python file `utests.py` in the main directory:
+.. code-block:: bash
+
+    $ python3 utests.py
+
 Contents
 --------
 
@@ -26,7 +33,4 @@ Contents
    se3
    utils
 
-TODO
-----
 
-- Generate utests to check each function

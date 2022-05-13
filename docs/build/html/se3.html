@@ -191,6 +191,39 @@
         <article role="main">
           <div class="section" id="se-3-se-3-functions">
 <h1>SE(3) - se(3) functions<a class="headerlink" href="#se-3-se-3-functions" title="Permalink to this headline">#</a></h1>
+<p>An element of SE(3) represent a transformation matrix in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.
+Such an element can be generated from an element <span class="math notranslate nohighlight">\(\xi\)</span> in se(3).</p>
+<p>As se(3) is a vector space, we are able to do probabilities such as expected value, things that are not possible on a group (i.e., SE(3)).</p>
+<p>Elements of se(3) are 4x4 matrices of the form</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}M = \xi^\wedge =
+\begin{bmatrix}
+  \rho \\ \phi
+\end{bmatrix}^\wedge
+=
+\begin{bmatrix}
+\phi^\wedge &amp; \rho \\
+0^T &amp; 0
+\end{bmatrix},\end{split}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\phi^\wedge\)</span> corresponds to the element of so(3) of coordinate <span class="math notranslate nohighlight">\(\phi\)</span>.
+See <a class="reference internal" href="so3.html#so-3-so-3-functions"><span class="std std-ref">SO(3) - so(3) functions</span></a> for details on this operation.</p>
+<p>Do note that elements of se(3) are <strong>matrices</strong> and not vectors.
+However, we prefer using the <em>coordinates</em> while working with these elements.
+Refer to <a class="reference external" href="https://en.wikipedia.org/wiki/Basis_(linear_algebra)">wikipedia</a> for a precise definition of these terms.</p>
+<p>The (linear) operation <span class="math notranslate nohighlight">\((\cdot)^\wedge\)</span> maps a coordinate to its associated element in se(3).</p>
+<p>An element of se(3) is mapped on SE(3) using the exponential function, and an element of SE(3) can be sent to se(3) using the logarithm function.
+For this mapping to be bijective, the restriction is the same as in <cite>SO(3) - so(3) functions</cite>.
+We need to restrict the rotation element <span class="math notranslate nohighlight">\(\phi\)</span> of <span class="math notranslate nohighlight">\(\xi=[\rho^T\, \phi^T]^T\)</span> se(3) in the ball of radius <span class="math notranslate nohighlight">\(\pi\)</span>, that is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[||\phi|| &lt; \pi.\]</div></div>
+<p><strong>Careful:</strong> The exponential mapping is not homomorphic, which translates to the inequality</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\exp(\xi_1^\wedge)\exp(\xi_2^\wedge) \neq \exp(\xi_1^\wedge+\xi_2^\wedge).\]</div></div>
+<p>The true result relies on the <em>Baker-Campbell-Hausdorff</em> formula, that is quite complicated and is an infinite series.
+However, if one of the component is small, we have the following useful approximation:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\exp(\xi_1^\wedge)\exp(\xi_2^\wedge) \approx \exp( [\xi_1+\mathcal{J}(\xi_1)^{-1}\xi_2]^\wedge) \quad\text{if } \xi_2 \text{ is small},\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{J}(\xi_1)\)</span> is the (left) Jacobian of SE(3).</p>
 <div class="section" id="basic-se-3-operations">
 <h2>Basic se(3) operations<a class="headerlink" href="#basic-se-3-operations" title="Permalink to this headline">#</a></h2>
 <dl class="py function">

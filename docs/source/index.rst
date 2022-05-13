@@ -18,7 +18,7 @@ Installation
 To use this lib, simply clone this project and import the file ``liblie.py`` to your python project.
 
 Run unit tests
-----
+--------------
 To run the unit tests, simply execute the python file `utests.py` in the main directory:
 .. code-block:: bash
 

@@ -114,6 +114,8 @@ def logm_so3(C):
     if C.shape != (3,3):
         raise ValueError('logm_so3: C should be a 3x3 rotation matrix and not ' + str(M.shape))
     theta = np.arccos((np.trace(C)-1)/2.)
+    if theta < 1e-5:
+        return np.zeros((3,3))
     return .5 * theta/np.sin(theta) * (C - C.T)
 
 def expm_so3(M):
@@ -133,7 +135,10 @@ def expm_so3(M):
         
     bphi = vee_so3(M)
     phi = scipy.linalg.norm(bphi)
-    a = bphi/phi
+    if phi>1e-5:
+        a = bphi/phi
+    else:
+        return np.eye(3,3)
     
     return np.cos(phi)*np.eye(3,3) + (1-np.cos(phi))*xxT(a) + np.sin(phi)*wedge_so3(a)
 

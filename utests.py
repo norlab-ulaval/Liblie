@@ -48,12 +48,18 @@ class TestStringMethods(unittest.TestCase):
         self.assertArrayEqual(ll.expm_so3(self.so3_M3), sc.linalg.expm(self.so3_M3))
         self.assertArrayEqual(ll.expm_se3(self.se3_M4), sc.linalg.expm(self.se3_M4))
 
+        self.assertArrayEqual(ll.expm_so3(np.zeros((3,3))), np.eye(3,3))
+        self.assertArrayEqual(ll.expm_se3(np.zeros((4,4))), np.eye(4,4))
+
     def test_logm(self):
         self.assertArrayEqual(ll.logm(self.M2), sc.linalg.logm(self.M2))
         self.assertArrayEqual(ll.logm(self.M3), sc.linalg.logm(self.M3))
 
         self.assertArrayEqual(ll.logm_so3(self.SO3_M3), self.so3_M3)
         self.assertArrayEqual(ll.logm_se3(self.SE3_M4), self.se3_M4)
+
+        self.assertArrayEqual(ll.logm_so3(np.eye(3,3)), np.zeros((3,3)))
+        self.assertArrayEqual(ll.logm_se3(np.eye(4,4)), np.zeros((4,4)))
 
     def test_wedge_vee(self):
         self.assertArrayEqual(ll.wedge_so3(self.coords_so3), self.so3_M3)
